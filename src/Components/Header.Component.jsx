@@ -1,7 +1,7 @@
 export default function HeaderComponent() {
   return (
     <>
-      <img src="/PokedexLogo.png" alt="PkLogo" className="mx-auto" />
+      <a href="/"><img src="/PokedexLogo.png" alt="PkLogo" className="mx-auto" /></a>
       <form className="max-w-xs m-auto">
         <input
           type="text"

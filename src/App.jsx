@@ -12,9 +12,9 @@ export default function App() {
   fetchData()
   },[])
   return (
-    <>  
+    <div className="flex flex-col justify-center items-center ">  
       <HeaderComponent />
-      <div className="flex flex-col items-center justify-center md:grid md:grid-cols-3 md:gap-10">
+      <div className="md:grid md:grid-cols-3 md:gap-20 min-w-[60%] p-10 mt-10">
         {
           pokemont.map((pokemon,index)=>(
             <Card name={pokemon.name} pokemonIndex={index+1} key={index}/> 
@@ -23,6 +23,6 @@ export default function App() {
         }            
       </div>
       
-    </>
+    </div>
   );
 }
