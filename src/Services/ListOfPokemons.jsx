@@ -1,7 +1,6 @@
 import { useState,useEffect } from "react";
 import HeaderComponent from "../Components/Header.Component";
 import Card from "../Components/Card.Component";
-import { Link } from "wouter";
 export default function ListOfPokemons(){
   const [pokemont,setPokemonT] = useState([])
   useEffect(()=>{
