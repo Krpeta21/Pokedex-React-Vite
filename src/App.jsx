@@ -1,28 +1,15 @@
-import { useState,useEffect } from "react";
-import Card from "./Components/Card.Component";
-import HeaderComponent from "./Components/Header.Component";
+import { Route} from "wouter";
+import ListOfPokemons from "./Services/ListOfPokemons";
+import PokemonDetailCard from "./Components/Pokemon.Component";
+import NotFound from "./Components/NotFound.Component";
+
+
 export default function App() {
-  const [pokemont,setPokemonT] = useState([])
-  useEffect(()=>{
-    async function fetchData(){
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon')
-    const pokemons = await response.json()
-    setPokemonT(pokemons.results)    
-  }
-  fetchData()
-  },[])
   return (
-    <div className="flex flex-col justify-center items-center ">  
-      <HeaderComponent />
-      <div className="md:grid md:grid-cols-3 md:gap-20 min-w-[60%] p-10 mt-10">
-        {
-          pokemont.map((pokemon,index)=>(
-            <Card name={pokemon.name} pokemonIndex={index+1} key={index}/> 
-          )
-          )
-        }            
-      </div>
-      
-    </div>
-  );
+    <>
+      <Route path="/pokemon/:keyword" component={PokemonDetailCard} />
+      <Route path="/" component={ListOfPokemons} />
+      <Route path="/:rest*" component={NotFound} />
+    </>
+  )
 }
