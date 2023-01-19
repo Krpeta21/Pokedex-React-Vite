@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
-import HeaderComponent from "../Components/Header.Component";
-import Card from "../Components/Card.Component";
+import HeaderComponent from "./Header.Component";
+import Card from "./Card.Component";
 export default function ListOfPokemons(){
   const [pokemont,setPokemonT] = useState([])
   useEffect(()=>{
